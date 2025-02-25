@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JEE-M Summed-Up | Grafite</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/static/styles.css" />
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+            const firebaseConfig = {
+                apiKey: "AIzaSyA9n9JTzzCgkXvUiIE_KYBxOIPkZsNnCf4",
+                authDomain: "qpump-user-dev.firebaseapp.com",
+                projectId: "qpump-user-dev",
+                storageBucket: "qpump-user-dev.firebasestorage.app",
+                messagingSenderId: "13249653712",
+                appId: "1:13249653712:web:3767748113d05f95f927d5",
+                measurementId: "G-G81Z3YZ79Z",
+            };
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        </script>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [["$", "$"]],
+                displayMath: [["$$", "$$"]],
+                },
+                options: {
+                skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+                },
+            };
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                if (!localStorage.getItem("show")) {
+                    var modal = new bootstrap.Modal(document.getElementById('discordModal'));
+                    modal.show();
+                }
+            });
+
+            function closeModal() {
+                localStorage.setItem("show", "true");
+                var modal = bootstrap.Modal.getInstance(document.getElementById('discordModal'));
+                modal.hide();
+            }
+        </script>
+
+        <link rel="icon" href="/static/logo.png" type="image/png" />
+
+        <meta name="description" content="JEE Mains PYQ Based Topic-Wise Analysis" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="JEE-M Summed-Up" />
+        <meta property="og:description" content="JEE Mains PYQ Based Topic-Wise Analysis" />
+        <meta property="og:image" content="/static/logo.png" />
+    </head>
+    <body data-bs-theme="dark">
+        <h1><a href="/">JEE Mains Top 500 Questions</a></h1>
+        <div class="container mt-4">
+            {% block content %}{% endblock %}
+        </div>
+
+        <!-- Discord Modal -->
+        <div class="modal fade" id="discordModal" tabindex="-1" aria-labelledby="discordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="discordModalLabel">Join Our Discord Server</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Join our Discord server to stay updated and connect with the community!</p>
+                        <a href="https://discord.gg/unCVYP8YtV" target="_blank" class="btn btn-dark" onclick="closeModal()">Join Now</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
