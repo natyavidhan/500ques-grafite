@@ -3,12 +3,21 @@
 <li class="breadcrumb-item active">Home</li>
 {% endblock crumbs %}
 {% block content %}
+<style>
+    .item {
+        max-width: 40rem;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+</style>
 <div class="row">
     <div class="col-md-12">
         <div class="list-group">
-            <a href="/maths" class="item list-group-item list-group-item-action">Mathematics</a>
-            <a href="/physics" class="item list-group-item list-group-item-action">Physics</a>
-            <a href="/chemistry" class="item list-group-item list-group-item-action">Chemistry</a>
+            <center>
+                <a href="/maths" class="item list-group-item list-group-item-action">Mathematics</a>
+                <a href="/physics" class="item list-group-item list-group-item-action">Physics</a>
+                <a href="/chemistry" class="item list-group-item list-group-item-action">Chemistry</a>
+            </center>
         </div>
     </div>
 </div>

@@ -33,6 +33,9 @@ def chapter(sub, chap):
     questions = get_questions(sub, chap)
     return render_template('questions.html', sub=sub, chapter=chap, questions=questions)
 
+@app.route("/dono")
+def dono():
+    return render_template("donation.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
