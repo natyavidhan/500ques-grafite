@@ -5,6 +5,17 @@
 <li class="breadcrumb-item active">{{chapter.replace("-", " ").title()}}</li>
 {% endblock crumbs %}
 {% block content %}
+
+<style>
+    .correct {
+        background-color: #0f5132 !important;
+    }
+
+    .incorrect {
+        background-color: #2c0b0e !important;
+    }
+</style>
+
 <div class="row">
     <div class="col-md-12">
         <h1 class="mb-4">Top Previous Year Questions - {{chapter}}</h1>
@@ -62,10 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (option.getAttribute('data-answer') === 'True') {
                     correctOption = option.innerText.split(':')[0];
                 }
+                // if any option has correct or incorrect class, remove it
+                option.classList.remove('correct', 'incorrect');
             });
 
             if (correctAnswer === 'True') {
                 resultDiv.innerHTML = '<div class="alert alert-success" id="math-content">Correct!</div>';
+                this.classList.add('correct');
                 // if (window.MathJax) {
                 //     // MathJax.typesetClear(); // Clear old rendering cache
                 //     MathJax.typesetPromise([document.getElementById("math-content")])
@@ -77,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // exp.classList.remove('d-none');
             } else {
                 resultDiv.innerHTML = '<div class="alert alert-danger">Incorrect. The correct answer is ' + correctOption + '.</div>';
+                this.classList.add('incorrect');
                 let exp = this.parentElement.nextElementSibling.nextElementSibling;
                 // if (!exp.classList.contains('d-none')) {
                 //     exp.classList.add('d-none');
