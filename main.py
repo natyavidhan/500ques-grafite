@@ -29,6 +29,7 @@ def subject(sub):
 
 @app.route('/<sub>/<chap>')
 def chapter(sub, chap):
+    chap = chap.replace("-", " ")
     questions = get_questions(sub, chap)
     return render_template('questions.html', sub=sub, chapter=chap, questions=questions)
 
