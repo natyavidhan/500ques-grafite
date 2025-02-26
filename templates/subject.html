@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block crumbs %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active">{{ sub.capitalize() }}</li>
+{% endblock crumbs %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">{{ sub.capitalize() }} Chapters</h1>
+        <div class="list-group">
+            {% for chapter in chapters %}
+            <a href="/{{sub}}/{{chapter}}" class="item list-group-item list-group-item-action">{{chapter.replace("-", " ").title()}}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

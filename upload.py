@@ -11,9 +11,9 @@ client = MongoClient(os.getenv("MONGO_URI"))
 db = client['top500']
 
 data  = {
-    "physics": json.load(open("data/physics.json")),
-    "chemistry": json.load(open("data/chemistry.json")),
-    "maths": json.load(open("data/maths.json")),
+    "physics": json.load(open("data/physics_cleaned_cleaned.json")),
+    "chemistry": json.load(open("data/chemistry_cleaned_cleaned.json")),
+    "maths": json.load(open("data/maths_cleaned_cleaned.json")),
 }
 
 for key in data:
